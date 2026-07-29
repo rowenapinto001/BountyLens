@@ -1,10 +1,10 @@
 ## Summary
 
-- 
+What changed?
 
-## Screenshots or Recording
+## Screenshots
 
-Add screenshots or a short recording for UI changes.
+Add screenshots for UI changes.
 
 ## Checks
 
@@ -14,4 +14,4 @@ Add screenshots or a short recording for UI changes.
 
 ## Notes
 
-Mention any GitHub API, storage, ranking or extension permission changes.
+Mention API, storage, ranking or permission changes.

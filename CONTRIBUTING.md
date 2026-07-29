@@ -1,6 +1,6 @@
 # Contributing to BountyLens
 
-Thanks for taking a look at BountyLens. This project is a Chrome Manifest V3 side-panel extension built with React, TypeScript and Vite.
+BountyLens is a Chrome MV3 side-panel extension built with React, TypeScript and Vite.
 
 ## Local Setup
 
@@ -19,7 +19,7 @@ Then open `chrome://extensions`, enable Developer mode, choose Load unpacked and
 
 ## Development Checks
 
-Run these before opening a pull request:
+Run these before opening a pull request.
 
 ```bash
 npm run typecheck
@@ -34,7 +34,32 @@ npm run build
 - Keep ranking logic deterministic and covered by focused tests.
 - Keep the side-panel UI usable between 320px and 600px wide.
 - Do not commit `node_modules/`, `dist/`, logs, local environment files or coverage output.
-- Prefer small, focused changes with clear commit messages.
+- Keep changes small.
+
+## Commit Messages
+
+Use Conventional Commits:
+
+```text
+type(scope): short summary
+```
+
+Examples:
+
+```text
+fix(ui): improve dark mode icon contrast
+feat(ranking): sort issues by comment count
+docs(readme): add demo thumbnail
+chore(deps): move vite packages to dev dependencies
+```
+
+Common types:
+
+- `feat`: new user-facing behavior
+- `fix`: bug fix
+- `docs`: documentation only
+- `test`: tests only
+- `chore`: tooling, metadata or maintenance
 
 ## Pull Requests
 
@@ -53,4 +78,4 @@ When filing a bug, include:
 - Actual behavior.
 - Console errors or screenshots, if available.
 
-Please do not include private tokens, private repository details or personal data in issues.
+Do not include private tokens, private repository details or personal data in issues.

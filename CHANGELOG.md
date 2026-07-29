@@ -6,9 +6,11 @@ The format is based on Keep a Changelog, and this project follows semantic versi
 
 ## [Unreleased]
 
-### Added
+### Changed
 
-- GitHub repository documentation, contribution guide, security policy, issue templates and CI workflow.
+- Simplified repository templates.
+- Added Conventional Commits guidance.
+- Moved build tooling packages to development dependencies.
 
 ## [0.1.0] - 2026-07-29
 
