@@ -2,7 +2,11 @@
 
 Find GitHub bounties that match your experience.
 
+![BountyLens demo thumbnail](docs/media/bountylens-demo-thumbnail.png)
+
 BountyLens is a Chrome Manifest V3 side-panel extension that finds open public GitHub issues with the exact `bounty` label, estimates difficulty locally, ranks issues against the selected experience level and displays 10 issues per page.
+
+It is built for developers who want a focused way to discover less-crowded bounty-labelled GitHub issues, save promising leads and open the original GitHub discussion without leaving the browser workflow.
 
 ## Features
 
@@ -19,9 +23,9 @@ BountyLens is a Chrome Manifest V3 side-panel extension that finds open public G
 - Light and dark modes stored locally.
 - Direct page-number pagination for faster navigation.
 
-## Screenshots
+## Demo
 
-Screenshots can be added after loading the unpacked extension locally.
+The demo thumbnail above previews the BountyLens side-panel flow: experience selection, bounty-labelled issue discovery, save actions, GitHub links and numbered pagination. BountyLens detects the exact GitHub label `bounty`; availability and payment are not independently verified.
 
 ## Technology Stack
 
