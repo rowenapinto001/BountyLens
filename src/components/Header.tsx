@@ -1,6 +1,7 @@
 import { Bookmark, RefreshCw } from "lucide-react";
 import type { ExperienceLevel } from "../types";
 import { experienceLabel } from "./ExperienceSelector";
+import LogoMark from "./LogoMark";
 
 interface HeaderProps {
   experience: ExperienceLevel;
@@ -27,7 +28,7 @@ export default function Header({
     <header className="app-header">
       <div className="header-top">
         <div className="brand-lockup">
-          <div className="logo-mark" aria-hidden="true">BL</div>
+          <LogoMark />
           <div>
             <h1>BountyLens</h1>
             <p>GitHub bounties for you</p>
