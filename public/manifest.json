@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "BountyLens",
-  "description": "Find GitHub bounties that match your experience.",
+  "description": "Find public GitHub issues with the exact bounty label, ranked for your experience.",
   "version": "0.1.0",
   "permissions": ["sidePanel", "storage"],
   "host_permissions": ["https://api.github.com/*"],
