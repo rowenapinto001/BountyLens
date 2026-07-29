@@ -221,7 +221,7 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.65);
   border-radius: 13px;
   background: rgba(255, 255, 255, 0.95);
-  color: var(--text-primary);
+  color: #18234a;
   cursor: pointer;
   transition: border-color 140ms ease, color 140ms ease, background-color 140ms ease;
 }
@@ -803,11 +803,24 @@ p {
   color: var(--text-secondary);
 }
 
+:root[data-theme="dark"] .save-bounty-button {
+  border-color: #3a4260;
+  background: #20243d;
+  color: #d9def3;
+}
+
 .save-bounty-button:hover,
 .save-bounty-button.is-saved {
   border-color: var(--border-active);
   background: var(--soft-purple);
   color: var(--primary);
+}
+
+:root[data-theme="dark"] .save-bounty-button:hover,
+:root[data-theme="dark"] .save-bounty-button.is-saved {
+  border-color: #8b7cff;
+  background: #2b2552;
+  color: #c9c3ff;
 }
 
 .secondary-button:hover,

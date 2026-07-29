@@ -23,6 +23,10 @@ export function rankIssues(issues: GitHubIssue[], experience: ExperienceLevel, n
       };
     })
     .sort((a, b) => {
+      if (a.issue.comments !== b.issue.comments) {
+        return a.issue.comments - b.issue.comments;
+      }
+
       if (b.matchScore !== a.matchScore) {
         return b.matchScore - a.matchScore;
       }
@@ -38,7 +42,7 @@ export function rankIssues(issues: GitHubIssue[], experience: ExperienceLevel, n
         return updatedDiff;
       }
 
-      return a.issue.comments - b.issue.comments;
+      return a.issue.number - b.issue.number;
     });
 }
 

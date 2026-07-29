@@ -77,10 +77,6 @@ export default function App() {
   return (
     <div className="app-shell" data-theme={theme}>
       <Header
-        experience={experience}
-        issueCount={issueState.rankedIssues.length}
-        savedCount={savedIssues.length}
-        lastUpdated={storage.lastSuccessfulFetch}
         refreshing={issueState.refreshing || issueState.loading}
         showingSaved={showingSaved}
         theme={theme}
