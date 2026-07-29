@@ -12,10 +12,12 @@ BountyLens is a Chrome Manifest V3 side-panel extension that finds open public G
 - Pull request exclusion and malformed-result filtering.
 - Local rule-based difficulty estimation without AI.
 - Experience-based ranking for Student, Junior Developer, Software Engineer and Senior Engineer.
-- Chrome side panel UI with refresh, settings, pagination, loading, empty and error states.
+- Chrome side panel UI with refresh, experience tabs, saved bounties, theme toggle, pagination, loading, empty and error states.
 - Local cache using `chrome.storage.local` with a 15-minute freshness window.
 - Rate-limit, offline and GitHub failure handling.
 - Issue buttons that open the original GitHub issue.
+- Light and dark modes stored locally.
+- Direct page-number pagination for faster navigation.
 
 ## Screenshots
 
@@ -37,7 +39,8 @@ Screenshots can be added after loading the unpacked extension locally.
 ## Project Structure
 
 ```text
-public/                 Manifest and extension icons
+public/                 Extension manifest and icons
+sidepanel/              Vite HTML entry for the side panel build
 src/background/         Chrome service worker
 src/sidepanel/          Side panel React entry and styles
 src/components/         Reusable UI components
@@ -90,7 +93,7 @@ Fetched issues are cached locally for 15 minutes. If the cache is fresh, BountyL
 
 ## Privacy
 
-BountyLens does not collect personal data. BountyLens does not use analytics. BountyLens does not sell user data. The selected experience is stored locally in `chrome.storage.local`. GitHub issues are retrieved directly from GitHub's public API. No browsing history is read. No GitHub login is required.
+BountyLens does not collect personal data. BountyLens does not use analytics. BountyLens does not sell user data. The selected experience, theme, saved bounties and cached public issues are stored locally in `chrome.storage.local`. GitHub issues are retrieved directly from GitHub's public API. No browsing history is read. No GitHub login is required.
 
 ## Current Limitations
 
@@ -99,6 +102,13 @@ BountyLens does not collect personal data. BountyLens does not use analytics. Bo
 - It does not search external bounty platforms.
 - It does not claim issues because GitHub has no universal issue-claiming mechanism.
 - It does not authenticate with GitHub or access private repositories.
+- Saved bounties are local to the browser profile.
+
+## Repository Notes
+
+- `node_modules/`, `dist/`, logs, coverage output and local environment files are ignored.
+- Run `npm run build` before loading or refreshing the unpacked extension from `dist/`.
+- Commit source files, tests, manifests, package files, README updates and icons; do not commit generated dependency or build folders.
 
 ## Future Ideas
 

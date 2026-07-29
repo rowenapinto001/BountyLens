@@ -1,4 +1,5 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Info, MessageCircle } from "lucide-react";
 import EmptyState from "../components/EmptyState";
 import ErrorState from "../components/ErrorState";
 import ExperienceTabs from "../components/ExperienceTabs";
@@ -11,7 +12,7 @@ import { useIssues } from "../hooks/useIssues";
 import { useStorage } from "../hooks/useStorage";
 import { rankIssues } from "../ranking/rankIssues";
 import type { RankedIssue } from "../ranking/rankIssues";
-import type { ExperienceLevel } from "../types";
+import type { ExperienceLevel, ThemeMode } from "../types";
 import { paginate } from "../utils/pagination";
 
 export default function App() {
@@ -19,14 +20,24 @@ export default function App() {
   const [showingSaved, setShowingSaved] = useState(false);
   const resultsRef = useRef<HTMLDivElement>(null);
   const experience = storage?.experience;
+  const theme = storage?.theme ?? "light";
   const issueState = useIssues(storage, experience, updateStorage);
   const savedIssues = storage?.savedIssues ?? [];
   const savedIssueIds = useMemo(() => new Set(savedIssues.map((issue) => issue.id)), [savedIssues]);
   const savedRankedIssues = useMemo(() => (experience ? rankIssues(savedIssues, experience) : []), [savedIssues, experience]);
   const savedPagination = paginate(savedRankedIssues, storage?.currentPage ?? 1);
 
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+  }, [theme]);
+
   async function saveExperience(nextExperience: ExperienceLevel) {
     await updateStorage({ experience: nextExperience, currentPage: 1 });
+  }
+
+  async function toggleTheme() {
+    const nextTheme: ThemeMode = theme === "dark" ? "light" : "dark";
+    await updateStorage({ theme: nextTheme });
   }
 
   async function handlePageChange(page: number) {
@@ -64,7 +75,7 @@ export default function App() {
   const hasVisibleResults = visibleIssues.length > 0;
 
   return (
-    <div className="app-shell">
+    <div className="app-shell" data-theme={theme}>
       <Header
         experience={experience}
         issueCount={issueState.rankedIssues.length}
@@ -72,7 +83,9 @@ export default function App() {
         lastUpdated={storage.lastSuccessfulFetch}
         refreshing={issueState.refreshing || issueState.loading}
         showingSaved={showingSaved}
+        theme={theme}
         onToggleSaved={() => void toggleSavedView()}
+        onToggleTheme={() => void toggleTheme()}
         onRefresh={() => void issueState.refresh()}
       />
 
@@ -81,20 +94,34 @@ export default function App() {
       ) : (
         <main className="main-content">
           <ExperienceTabs selected={experience} onSelect={(nextExperience) => void saveExperience(nextExperience)} />
-          <p className="results-notice">Availability is not guaranteed. Check the GitHub discussion before starting.</p>
+          <div className="top-messages">
+            <div className="results-notice">
+              <span className="notice-icon" aria-hidden="true">
+                <Info size={17} />
+              </span>
+              <p>
+                <strong>Availability is not guaranteed.</strong>
+                <span>Check the GitHub discussion before starting.</span>
+              </p>
+              <span className="notice-chat" aria-hidden="true">
+                <MessageCircle size={18} />
+              </span>
+            </div>
+            <div className="status-region">
+              {issueState.warning ? <ErrorState error={issueState.warning} hasCachedResults={hasResults} /> : null}
+              {issueState.error ? <ErrorState error={issueState.error} hasCachedResults={hasResults} /> : null}
+              {issueState.showingCachedResults && !issueState.warning ? <p className="cache-note inline">Showing cached results.</p> : null}
 
-          {issueState.warning ? <ErrorState error={issueState.warning} hasCachedResults={hasResults} /> : null}
-          {issueState.error ? <ErrorState error={issueState.error} hasCachedResults={hasResults} /> : null}
-          {issueState.showingCachedResults && !issueState.warning ? <p className="cache-note inline">Showing cached results.</p> : null}
+              {showingSaved && !hasVisibleResults ? (
+                <section className="message-state" aria-live="polite">
+                  <h2>No saved bounties yet</h2>
+                  <p>Open a bounty on GitHub, then use Save to keep it here for later.</p>
+                </section>
+              ) : null}
 
-          {showingSaved && !hasVisibleResults ? (
-            <section className="message-state" aria-live="polite">
-              <h2>No saved bounties yet</h2>
-              <p>Open a bounty on GitHub, then use Save to keep it here for later.</p>
-            </section>
-          ) : null}
-
-          {!showingSaved && !issueState.error && !hasResults ? <EmptyState onRefresh={() => void issueState.refresh()} /> : null}
+              {!showingSaved && !issueState.error && !hasResults ? <EmptyState onRefresh={() => void issueState.refresh()} /> : null}
+            </div>
+          </div>
 
           {hasVisibleResults ? (
             <>

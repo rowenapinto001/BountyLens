@@ -1,5 +1,5 @@
-import { Bookmark, RefreshCw } from "lucide-react";
-import type { ExperienceLevel } from "../types";
+import { Bookmark, Moon, RefreshCw, Sun } from "lucide-react";
+import type { ExperienceLevel, ThemeMode } from "../types";
 import { experienceLabel } from "./ExperienceSelector";
 import LogoMark from "./LogoMark";
 
@@ -10,7 +10,9 @@ interface HeaderProps {
   lastUpdated?: number;
   refreshing: boolean;
   showingSaved: boolean;
+  theme: ThemeMode;
   onToggleSaved: () => void;
+  onToggleTheme: () => void;
   onRefresh: () => void;
 }
 
@@ -21,9 +23,13 @@ export default function Header({
   lastUpdated,
   refreshing,
   showingSaved,
+  theme,
   onToggleSaved,
+  onToggleTheme,
   onRefresh
 }: HeaderProps) {
+  const isDark = theme === "dark";
+
   return (
     <header className="app-header">
       <div className="header-top">
@@ -35,6 +41,15 @@ export default function Header({
           </div>
         </div>
         <div className="header-actions">
+          <button
+            className="icon-button"
+            type="button"
+            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            onClick={onToggleTheme}
+          >
+            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
           <button
             className={`icon-button ${showingSaved ? "is-active" : ""}`}
             type="button"
