@@ -1,5 +1,7 @@
 export type ExperienceLevel = "student" | "junior" | "software-engineer" | "senior";
 
+export type ThemeMode = "light" | "dark";
+
 export type Difficulty = "beginner" | "intermediate" | "advanced";
 
 export interface DifficultyResult {
