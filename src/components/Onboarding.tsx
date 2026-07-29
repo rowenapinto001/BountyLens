@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { ExperienceLevel } from "../types";
 import ExperienceSelector from "./ExperienceSelector";
+import LogoMark from "./LogoMark";
 
 interface OnboardingProps {
   onComplete: (experience: ExperienceLevel) => Promise<void>;
@@ -22,7 +23,7 @@ export default function Onboarding({ onComplete }: OnboardingProps) {
   return (
     <main className="onboarding-shell">
       <div className="brand-lockup large">
-        <div className="logo-mark" aria-hidden="true">BL</div>
+        <LogoMark />
         <div>
           <h1>BountyLens</h1>
           <p>Find GitHub bounties that match your experience.</p>
