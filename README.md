@@ -1,12 +1,23 @@
 # BountyLens
 
+[![CI](https://github.com/rowenapinto001/BountyLens/actions/workflows/ci.yml/badge.svg)](https://github.com/rowenapinto001/BountyLens/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Chrome MV3](https://img.shields.io/badge/Chrome-MV3-5746e8.svg)](public/manifest.json)
+
 Find GitHub bounties that match your experience.
 
 ![BountyLens demo thumbnail](docs/media/bountylens-demo-thumbnail.png)
 
 BountyLens is a Chrome Manifest V3 side-panel extension that finds open public GitHub issues with the exact `bounty` label, estimates difficulty locally, ranks issues against the selected experience level and displays 10 issues per page.
 
-It is built for developers who want a focused way to discover less-crowded bounty-labelled GitHub issues, save promising leads and open the original GitHub discussion without leaving the browser workflow.
+It is built for developers who want a focused way to discover less-crowded bounty-labeled GitHub issues, save promising leads and open the original GitHub discussion without leaving the browser workflow.
+
+## Status
+
+- Version: `0.1.0`
+- Release tag: `v0.1.0`
+- License: MIT
+- Bounty verification: exact GitHub label detection only. Availability and payment are not independently verified.
 
 ## Features
 
@@ -25,7 +36,7 @@ It is built for developers who want a focused way to discover less-crowded bount
 
 ## Demo
 
-The demo thumbnail above previews the BountyLens side-panel flow: experience selection, bounty-labelled issue discovery, save actions, GitHub links and numbered pagination. BountyLens detects the exact GitHub label `bounty`; availability and payment are not independently verified.
+The demo thumbnail above previews the BountyLens side-panel flow: experience selection, bounty-labeled issue discovery, save actions, GitHub links and numbered pagination. BountyLens detects the exact GitHub label `bounty`; availability and payment are not independently verified.
 
 ## Technology Stack
 
@@ -113,6 +124,16 @@ BountyLens does not collect personal data. BountyLens does not use analytics. Bo
 - `node_modules/`, `dist/`, logs, coverage output and local environment files are ignored.
 - Run `npm run build` before loading or refreshing the unpacked extension from `dist/`.
 - Commit source files, tests, manifests, package files, README updates and icons; do not commit generated dependency or build folders.
+
+## Contributing
+
+Contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
+
+For security reports, read [SECURITY.md](SECURITY.md). Project changes are tracked in [CHANGELOG.md](CHANGELOG.md).
+
+## License
+
+BountyLens is available under the [MIT License](LICENSE).
 
 ## Future Ideas
 
