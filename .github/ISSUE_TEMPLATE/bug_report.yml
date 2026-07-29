@@ -1,5 +1,5 @@
 name: Bug report
-description: Report a reproducible problem with BountyLens.
+description: Report a problem.
 title: "[Bug]: "
 labels: ["bug"]
 body:
@@ -7,7 +7,6 @@ body:
     id: summary
     attributes:
       label: Summary
-      description: What happened?
     validations:
       required: true
   - type: textarea
@@ -40,5 +39,4 @@ body:
   - type: textarea
     id: extra
     attributes:
-      label: Screenshots or console output
-      description: Do not include private tokens or personal data.
+      label: Screenshots or logs
