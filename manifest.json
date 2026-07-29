@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "BountyLens",
+  "description": "Find GitHub bounties that match your experience.",
+  "version": "0.1.0",
+  "permissions": ["sidePanel", "storage"],
+  "host_permissions": ["https://api.github.com/*"],
+  "action": {
+    "default_title": "Open BountyLens",
+    "default_icon": {
+      "16": "dist/icons/icon-16.png",
+      "32": "dist/icons/icon-32.png",
+      "48": "dist/icons/icon-48.png",
+      "128": "dist/icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "dist/icons/icon-16.png",
+    "32": "dist/icons/icon-32.png",
+    "48": "dist/icons/icon-48.png",
+    "128": "dist/icons/icon-128.png"
+  },
+  "background": {
+    "service_worker": "dist/assets/service-worker.js",
+    "type": "module"
+  },
+  "side_panel": {
+    "default_path": "dist/sidepanel/index.html"
+  }
+}
