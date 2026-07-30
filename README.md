@@ -3,14 +3,28 @@
 [![CI](https://github.com/rowenapinto001/BountyLens/actions/workflows/ci.yml/badge.svg)](https://github.com/rowenapinto001/BountyLens/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Chrome MV3](https://img.shields.io/badge/Chrome-MV3-5746e8.svg)](public/manifest.json)
+[![Tech Stack](https://img.shields.io/badge/Tech-React%20%2B%20TypeScript-3178c6.svg)](#tech-stack)
+[![Status](https://img.shields.io/badge/Status-v0.1.0-43a047.svg)](https://github.com/rowenapinto001/BountyLens/releases/tag/v0.1.0)
 
 Find GitHub bounties that match your experience.
 
+## Demo
+
 ![BountyLens demo thumbnail](docs/media/bountylens-demo-thumbnail.png)
+
+The demo thumbnail previews the BountyLens side-panel flow: experience selection, bounty-labeled issue discovery, save actions, GitHub links and numbered pagination.
 
 BountyLens is a Chrome Manifest V3 side-panel extension that finds open public GitHub issues with the exact `bounty` label, estimates difficulty locally, ranks issues against the selected experience level and displays 10 issues per page.
 
 It is built for developers who want a focused way to discover less-crowded bounty-labeled GitHub issues, save promising leads and open the original GitHub discussion without leaving the browser workflow.
+
+## What it does
+
+BountyLens searches public GitHub issues with the exact `bounty` label, filters out pull requests, estimates difficulty locally, and highlights lower-comment opportunities that may be easier to review quickly.
+
+## Why I built this
+
+I wanted a practical developer tool that reduces the noise around finding open-source bounty opportunities. Instead of scrolling broad GitHub searches, BountyLens gives a focused side-panel workflow with ranking, saving, and direct issue links.
 
 ## Status
 
@@ -34,11 +48,7 @@ It is built for developers who want a focused way to discover less-crowded bount
 - Light and dark modes stored locally.
 - Direct page-number pagination for faster navigation.
 
-## Demo
-
-The demo thumbnail above previews the BountyLens side-panel flow: experience selection, bounty-labeled issue discovery, save actions, GitHub links and numbered pagination. BountyLens detects the exact GitHub label `bounty`; availability and payment are not independently verified.
-
-## Technology Stack
+## Tech Stack
 
 - Chrome Extension Manifest V3
 - TypeScript
@@ -67,7 +77,7 @@ src/utils/              Dates, labels, repository and pagination utilities
 tests/                  Vitest utility tests
 ```
 
-## Installation
+## Setup
 
 ```bash
 npm install
