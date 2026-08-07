@@ -6,17 +6,66 @@
 [![Tech Stack](https://img.shields.io/badge/Tech-React%20%2B%20TypeScript-3178c6.svg)](#tech-stack)
 [![Status](https://img.shields.io/badge/Status-v0.1.0-43a047.svg)](https://github.com/rowenapinto001/BountyLens/releases/tag/v0.1.0)
 
+
+<!-- media:start -->
+
+<p align="center">
+  <img src="docs/media/logo.png" width="96" alt="BountyLens logo">
+</p>
+
+<h3 align="center">Find GitHub bounties worth your time.</h3>
+
+<p align="center">
+  <a href="docs/media/demo.mp4">
+    <img src="docs/media/demo-thumbnail.webp" width="640" alt="Watch the BountyLens demo">
+  </a>
+  <br>
+  <a href="docs/media/demo.mp4"><b>Watch the 30 second demo</b></a>
+</p>
+
+## Screenshots
+
+![Bounties matched to your level.](docs/media/1-experience.webp)
+
+<sub>Bounties matched to your level.</sub>
+
+<details>
+<summary><b>See 4 more</b></summary>
+
+### Results
+
+![Real issues, ranked and filtered.](docs/media/2-results.webp)
+
+<sub>Real issues, ranked and filtered.</sub>
+
+### Saved
+
+![Keep the ones worth a look.](docs/media/3-saved.webp)
+
+<sub>Keep the ones worth a look.</sub>
+
+### Dark
+
+![Dark mode, because of course.](docs/media/4-dark.webp)
+
+<sub>Dark mode, because of course.</sub>
+
+### Levels
+
+![Change level, change the list.](docs/media/5-levels.webp)
+
+<sub>Change level, change the list.</sub>
+
+</details>
+
+<sub>Every screenshot is captured from the real extension running in Chrome, not
+mocked up, so they cannot drift from what the product actually does. Regenerate
+them with the tooling in the store-publishing workspace.</sub>
+
+<!-- media:end -->
+
 Find GitHub bounties that match your experience.
 
-## Demo
-
-![BountyLens demo thumbnail](docs/media/bountylens-demo-thumbnail.png)
-
-The demo thumbnail previews the BountyLens side-panel flow: experience selection, bounty-labeled issue discovery, save actions, GitHub links and numbered pagination.
-
-BountyLens is a Chrome Manifest V3 side-panel extension that finds open public GitHub issues with the exact `bounty` label, estimates difficulty locally, ranks issues against the selected experience level and displays 10 issues per page.
-
-It is built for developers who want a focused way to discover less-crowded bounty-labeled GitHub issues, save promising leads and open the original GitHub discussion without leaving the browser workflow.
 
 ## What it does
 
