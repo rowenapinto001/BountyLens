@@ -198,10 +198,15 @@ p {
   letter-spacing: 0;
 }
 
+/* Inherit, like the h1 above, rather than hardcoding white. The lockup renders
+   in two places: .app-header, which sets color:#ffffff on a gradient, and the
+   onboarding shell, which is light. White was correct only in the first, so on
+   the very first screen a new user sees, the tagline was white on white. */
 .brand-lockup p,
 .settings-header p {
   margin-top: 4px;
-  color: rgba(255, 255, 255, 0.9);
+  color: inherit;
+  opacity: 0.9;
   font-size: 15px;
   font-weight: 650;
 }
