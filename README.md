@@ -190,6 +190,11 @@ Contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before openin
 
 For security reports, read [SECURITY.md](SECURITY.md). Project changes are tracked in [CHANGELOG.md](CHANGELOG.md).
 
+## Privacy
+
+No accounts, no analytics, and nothing about you is collected.
+Full policy: <https://privacy.signalizeai.org/bountylens>
+
 ## License
 
 BountyLens is available under the [MIT License](LICENSE).
